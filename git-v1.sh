@@ -1,7 +1,7 @@
 #!/bin/bash
 ##################################################################################################################
-# Author 	: 	TheCynicalLiger
-# Website	:	https://github.com/TheCynicalLiger/
+# Author 	: 	The-Repo-Club
+# Website	:	https://github.com/The-Repo-Club/
 ##################################################################################################################
 #
 #   DO NOT JUST RUN THIS. EXAMINE AND JUDGE. RUN AT YOUR OWN RISK.
