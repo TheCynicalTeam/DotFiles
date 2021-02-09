@@ -1,5 +1,5 @@
 #!/bin/bash
 
-## Created By TheCynicalTeam
+## Created By The-Repo-Club
 
 i3-dmenu-desktop --dmenu='instamenu -h 50 -i -l 10 -w 400 -x 10 -y 36 -p "Launcher" -q "Launch a app"'
