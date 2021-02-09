@@ -1,5 +1,6 @@
 anymeal
 auracle
+aurutils
 autotiling
 bfetch
 bpytop
@@ -10,6 +11,8 @@ checkupdates-aur
 ckb-next
 colorgrab
 dracula-gtk-theme
+drill-search-cli
+drill-search-gtk
 duf
 gamehub
 glow
