@@ -16,7 +16,7 @@
     (open-on-exit)
     (aux-info
         (left-docks-width "188")
-        (right-docks-width "205")
+        (right-docks-width "209")
         (maximized "no"))
     (gimp-toolbox
         (side left)
@@ -82,6 +82,10 @@
 (session-info "toplevel"
     (factory-entry "gimp-toolbox-color-dialog")
     (position 837 41))
+(session-info "toplevel"
+    (factory-entry "gimp-file-save-dialog")
+    (position 1000 33)
+    (size 780 585))
 
 (hide-docks no)
 (single-window-mode yes)

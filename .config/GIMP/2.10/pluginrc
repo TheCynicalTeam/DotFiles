@@ -6,6 +6,29 @@
 (protocol-version 26)
 (file-version 5)
 
+(plug-in-def "${gimp_plug_in_dir}/plug-ins/gutenprint" 1607498222
+    (proc-def "file_print_gutenprint" 1
+         "This plug-in prints images from The GIMP using Gutenprint directly."
+         "Prints images to many printers."
+         "Michael Sweet <mike@easysw.com> and Robert Krawitz <rlk@alum.mit.edu>"
+         "Copyright 1997-2006 by Michael Sweet and Robert Krawitz"
+         "5.3.4 - 06 Dec 2020"
+         "_Print with Gutenprint..."
+         1
+        (menu-path "<Image>/File/Send")
+        (icon icon-name -1 "gtk-print")
+         "RGB*,GRAY*,INDEXED*"
+         9 0
+        (proc-arg 0 "run-mode" "Interactive, non-interactive")
+        (proc-arg 13 "image" "Input image")
+        (proc-arg 16 "drawable" "Input drawable")
+        (proc-arg 4 "driver" "Printer driver short name")
+        (proc-arg 4 "printer-queue" "CUPS Printer Queue")
+        (proc-arg 3 "left" "Left offset (points, -1 = centered)")
+        (proc-arg 3 "top" "Top offset (points, -1 = centered)")
+        (proc-arg 0 "length-key-value-array" "Length of the key-value array")
+        (proc-arg 9 "keys" "Key-value pairs for Gutenprint Settings"))
+    (locale-def "gutenprint" "${gimp_installation_dir}/share/locale"))
 (plug-in-def "${gimp_plug_in_dir}/plug-ins/web-browser/web-browser" 1601838911
     (proc-def "plug-in-web-browser" 1
          "Open an URL in the user specified web browser"
@@ -98,22 +121,6 @@
          ""
          1 0
         (proc-arg 0 "run-mode" "The run mode { RUN-INTERACTIVE (0) }")))
-(plug-in-def "${gimp_plug_in_dir}/plug-ins/tile-small/tile-small" 1601838911
-    (proc-def "plug-in-small-tiles" 1
-         "Tile image into smaller versions of the original"
-         "More here later"
-         "Andy Thomas"
-         "Andy Thomas"
-         "1997"
-         "_Small Tiles..."
-         0
-        (icon icon-name -1 "")
-         "RGB*, GRAY*"
-         4 0
-        (proc-arg 0 "run-mode" "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }")
-        (proc-arg 13 "image" "Input image (unused)")
-        (proc-arg 16 "drawable" "Input drawable")
-        (proc-arg 0 "num-tiles" "Number of tiles to make")))
 (plug-in-def "${gimp_plug_in_dir}/plug-ins/tile/tile" 1601838911
     (proc-def "plug-in-tile" 1
          "Create an array of copies of the image"
@@ -135,6 +142,22 @@
         (proc-arg 0 "new-image" "Create a new image?")
         (proc-arg 13 "new-image" "Output image (-1 if new-image == FALSE)")
         (proc-arg 14 "new-layer" "Output layer (-1 if new-image == FALSE)")))
+(plug-in-def "${gimp_plug_in_dir}/plug-ins/tile-small/tile-small" 1601838911
+    (proc-def "plug-in-small-tiles" 1
+         "Tile image into smaller versions of the original"
+         "More here later"
+         "Andy Thomas"
+         "Andy Thomas"
+         "1997"
+         "_Small Tiles..."
+         0
+        (icon icon-name -1 "")
+         "RGB*, GRAY*"
+         4 0
+        (proc-arg 0 "run-mode" "The run mode { RUN-INTERACTIVE (0), RUN-NONINTERACTIVE (1) }")
+        (proc-arg 13 "image" "Input image (unused)")
+        (proc-arg 16 "drawable" "Input drawable")
+        (proc-arg 0 "num-tiles" "Number of tiles to make")))
 (plug-in-def "${gimp_plug_in_dir}/plug-ins/sphere-designer/sphere-designer" 1601838911
     (proc-def "plug-in-spheredesigner" 1
          "Create an image of a textured sphere"
@@ -4376,28 +4399,5 @@
         (proc-arg 16 "drawable" "Input drawable (not used)")
         (proc-arg 0 "link-after-alignment" "Link the visible layers after alignment { TRUE, FALSE }")
         (proc-arg 0 "use-bottom" "use the bottom layer as the base of alignment { TRUE, FALSE }")))
-(plug-in-def "${gimp_plug_in_dir}/plug-ins/gutenprint" 1607498222
-    (proc-def "file_print_gutenprint" 1
-         "This plug-in prints images from The GIMP using Gutenprint directly."
-         "Prints images to many printers."
-         "Michael Sweet <mike@easysw.com> and Robert Krawitz <rlk@alum.mit.edu>"
-         "Copyright 1997-2006 by Michael Sweet and Robert Krawitz"
-         "5.3.4 - 06 Dec 2020"
-         "_Print with Gutenprint..."
-         1
-        (menu-path "<Image>/File/Send")
-        (icon icon-name -1 "gtk-print")
-         "RGB*,GRAY*,INDEXED*"
-         9 0
-        (proc-arg 0 "run-mode" "Interactive, non-interactive")
-        (proc-arg 13 "image" "Input image")
-        (proc-arg 16 "drawable" "Input drawable")
-        (proc-arg 4 "driver" "Printer driver short name")
-        (proc-arg 4 "printer-queue" "CUPS Printer Queue")
-        (proc-arg 3 "left" "Left offset (points, -1 = centered)")
-        (proc-arg 3 "top" "Top offset (points, -1 = centered)")
-        (proc-arg 0 "length-key-value-array" "Length of the key-value array")
-        (proc-arg 9 "keys" "Key-value pairs for Gutenprint Settings"))
-    (locale-def "gutenprint" "${gimp_installation_dir}/share/locale"))
 
 # end of pluginrc

@@ -3,7 +3,6 @@ auracle
 aurutils
 autotiling
 bfetch
-bpytop
 bspwm-cheat
 bumblebee-status
 checkupdates+aur
@@ -42,8 +41,6 @@ nerd-fonts-iosevka
 nerd-fonts-mononoki
 nerd-fonts-roboto-mono
 nerd-fonts-source-code-pro
-opendoas-sudo
-papirus-folders
 paru
 perl-checkupdates-aur
 perl-www-aur
@@ -56,7 +53,9 @@ qt-logout
 qt5-color-widgets
 qt5-styleplugins
 qt6ct
+qt6ct-git
 qt6gtk2
+qt6gtk2-git
 recycle-cli
 roccat-tools-arvo
 roccat-tools-common

@@ -1330,6 +1330,9 @@
   <resource identifier="AkrutiTml2 Bold" checksum="(null)">
   </resource>
 
+  <resource identifier="all-the-icons" checksum="(null)">
+  </resource>
+
   <resource identifier="C059" checksum="(null)">
   </resource>
 
@@ -1573,6 +1576,9 @@
   <resource identifier="EmojiOne" checksum="(null)">
   </resource>
 
+  <resource identifier="file-icons" checksum="(null)">
+  </resource>
+
   <resource identifier="FiraCode Nerd Font" checksum="(null)">
   </resource>
 
@@ -1601,6 +1607,9 @@
   </resource>
 
   <resource identifier="FiraCode Nerd Font weight=450" checksum="(null)">
+  </resource>
+
+  <resource identifier="FontAwesome" checksum="(null)">
   </resource>
 
   <resource identifier="FuraCode Nerd Font" checksum="(null)">
@@ -1634,6 +1643,9 @@
   </resource>
 
   <resource identifier="Gargi-1.2b Medium Italic" checksum="(null)">
+  </resource>
+
+  <resource identifier="github-octicons" checksum="(null)">
   </resource>
 
   <resource identifier="GurbaniBoliLite Medium Ultra-Condensed" checksum="(null)">
@@ -2191,6 +2203,9 @@
   <resource identifier="MalOtf" checksum="(null)">
   </resource>
 
+  <resource identifier="Material Icons" checksum="(null)">
+  </resource>
+
   <resource identifier="mononoki Nerd Font" checksum="(null)">
   </resource>
 
@@ -2306,6 +2321,78 @@
   </resource>
 
   <resource identifier="Noto Kufi Arabic Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao Heavy" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao UI" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao UI Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao UI Heavy" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao UI Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao UI Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Lao UI Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai Heavy" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai Thin" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai UI" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai UI Bold" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai UI Heavy" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai UI Light" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai UI Medium" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Looped Thai UI Thin" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Music" checksum="(null)">
@@ -3055,24 +3142,6 @@
   <resource identifier="Noto Sans Lao Light" checksum="(null)">
   </resource>
 
-  <resource identifier="Noto Sans Lao Looped" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Lao Looped Bold" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Lao Looped Heavy" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Lao Looped Light" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Lao Looped Medium" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Lao Looped Thin" checksum="(null)">
-  </resource>
-
   <resource identifier="Noto Sans Lao Medium" checksum="(null)">
   </resource>
 
@@ -3553,10 +3622,10 @@
   <resource identifier="Noto Sans Tai Tham" checksum="(null)">
   </resource>
 
-  <resource identifier="Noto Sans Tai Tham weight=448" checksum="(null)">
+  <resource identifier="Noto Sans Tai Tham Bold" checksum="(null)">
   </resource>
 
-  <resource identifier="Noto Sans Tai Tham weight=574" checksum="(null)">
+  <resource identifier="Noto Sans Tai Tham weight=482" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Sans Tai Viet" checksum="(null)">
@@ -3668,27 +3737,6 @@
   </resource>
 
   <resource identifier="Noto Sans Thai Light" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Thai Looped" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Thai Looped Bold" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Thai Looped Heavy" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Thai Looped Heavy Extra-Condensed" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Thai Looped Light" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Thai Looped Medium" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Sans Thai Looped Thin" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Sans Thai Medium" checksum="(null)">
@@ -4174,13 +4222,13 @@
   <resource identifier="Noto Serif Myanmar" checksum="(null)">
   </resource>
 
-  <resource identifier="Noto Serif Myanmar Bold" checksum="(null)">
+  <resource identifier="Noto Serif Myanmar" checksum="(null)">
+  </resource>
+
+  <resource identifier="Noto Serif Myanmar" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Serif Myanmar Heavy" checksum="(null)">
-  </resource>
-
-  <resource identifier="Noto Serif Myanmar Light" checksum="(null)">
   </resource>
 
   <resource identifier="Noto Serif Myanmar Medium" checksum="(null)">
@@ -4582,6 +4630,9 @@
   <resource identifier="Source Code Variable Italic" checksum="(null)">
   </resource>
 
+  <resource identifier="Source Code Variable Italic" checksum="(null)">
+  </resource>
+
   <resource identifier="Source Code Variable Light" checksum="(null)">
   </resource>
 
@@ -4664,6 +4715,9 @@
   </resource>
 
   <resource identifier="URW Gothic Semi-Bold Oblique" checksum="(null)">
+  </resource>
+
+  <resource identifier="Weather Icons" checksum="(null)">
   </resource>
 
   <resource identifier="Webdings" checksum="(null)">
