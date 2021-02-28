@@ -57,7 +57,7 @@ end
 
 #clear command
 function clear
-    command clear && fish
+    command reset && fish
 end
 
 #pacman unlock
