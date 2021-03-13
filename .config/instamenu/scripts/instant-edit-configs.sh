@@ -23,6 +23,7 @@ while [ -n "$LOOPSETTING" ]; do
     CHOICE="$(asksetting)"
     [ -n "$CHOICE" ] || exit
     unset LOOPSETTING
+    getsettings
     case "$CHOICE" in
         Awesome)
             CHOICE="$HOME/.config/awesome/rc.lua"
@@ -40,7 +41,7 @@ while [ -n "$LOOPSETTING" ]; do
             CHOICE="/etc/pacman.conf"
         ;;
         PolyBar)
-            CHOICE="$HOME/.config/polybar/config"
+            CHOICE="$HOME/.config/polybar/config_top.ini"
         ;;
         Kitty)
             CHOICE="$HOME/.config/kitty/kitty.conf"
@@ -57,5 +58,3 @@ while [ -n "$LOOPSETTING" ]; do
     esac
     $TEXTEDITOR "$CHOICE"
 done
-
-getsettings

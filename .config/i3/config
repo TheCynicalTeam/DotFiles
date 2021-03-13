@@ -716,7 +716,7 @@ $super_b+$control+s \
 ## Category: Games;
 # Description: Launch Minecraft;
 $super_b+$control+m \
-    $exe prime-run minecraft-launcher
+    $exe prime-run minecraft-launcher;focus
 
 #workspace 9 related
 
