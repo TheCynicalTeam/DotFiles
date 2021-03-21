@@ -8,6 +8,7 @@ bumblebee-status
 checkupdates+aur
 checkupdates-aur
 ckb-next
+ckbcomp
 colorgrab
 dracula-gtk-theme
 drill-search-cli
@@ -22,15 +23,14 @@ i3-maim
 i3-session
 i3-swallow
 i3lock-color
+imagewriter
 instamenu
 instamenu-extra
 instamenu-schemas
-lazygit
 lib32-libxft-bgra
 libgaminggear
 libxft-bgra
 minecraft-launcher
-multimc5
 multimonitorlock
 multimonitorlock-gui
 nbteditor
@@ -51,10 +51,7 @@ python-i3-py
 qt-logout
 qt5-color-widgets
 qt5-styleplugins
-qt6ct
-qt6ct-git
 qt6gtk2
-qt6gtk2-git
 recycle-cli
 roccat-tools-arvo
 roccat-tools-common
@@ -87,4 +84,5 @@ touchpad-indicator
 tty-clock
 wmappearance
 wmappearance-gtk3
+xcursor-breeze
 xtitle
