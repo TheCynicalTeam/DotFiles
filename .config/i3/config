@@ -773,12 +773,12 @@ $print_b \
     $exe i3-maim -w
 
 ## Category: Screenshots;
-# Description:  Screen Shot (Select)
+# Description: Screen Shot (Select);
 $control_b+Print \
     $exe i3-maim -s
 
 ## Category: Screenshots;
-# Description:  Screen Shot (Full);
+# Description: Screen Shot (Full);
 $super_b+Print \
     $exe i3-maim -f
 
