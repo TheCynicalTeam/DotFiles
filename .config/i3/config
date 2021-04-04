@@ -13,7 +13,7 @@ workspace_auto_back_and_forth yes
 ##################################################
 
 set $TerminalEmulator kitty
-set $WebBrowser firefox
+set $WebBrowser vivaldi-stable
 set $FileManager nemo
 set $MailReader thunderbird
 set $TextEditor emacs
@@ -571,7 +571,7 @@ assign [class="(?i)Aseprite|Krita"]                                             
 assign [class="(?i)Vlc"]                                                        → $ws5
 
 # Workspace $ws6 WebBrowser
-assign [class="(?i)Firefox"]                                                    → $ws6
+assign [class="(?i)Firefox|Vivaldi-stable"]                                     → $ws6
 
 # Workspace $ws7 Other Stuff
 assign [class="(?i)Mail|Thunderbird"]                                           → $ws7
@@ -793,7 +793,7 @@ for_window [class="(?i)Font-manager"] floating enable
 for_window [class="(?i)xfce4*"] floating enable
 for_window [class="(?i)VirtualBox*"] floating enable, resize set 1280 720, move position center
 for_window [class="(?i)Pavucontrol"] floating enable, resize set 640 480, move position center
-for_window [class="(?i)wm-cheat.py"] floating enable, resize set 1280 720, move position center
+for_window [class="(?i)wm-cheat.py"] floating enable, resize set 720 720, move position center
 for_window [class="(?i)MultiMonitorLock-GUI"] floating enable
 for_window [class="(?i)Polybar-updates"] floating enable, resize set 1280 720, move position center
 for_window [class="(?i)floatmenu"] floating enable

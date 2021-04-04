@@ -51,13 +51,13 @@ function update
     pacman -Syu
 end
 
-function yay-update
-    yay -Syu
+function paru-update
+    paru -Syu
 end
 
 #clear command
 function clear
-    command reset && fish
+    command clear && fish
 end
 
 #pacman unlock
