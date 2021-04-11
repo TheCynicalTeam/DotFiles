@@ -16,7 +16,7 @@ set -g default_user your_normal_user
 set -g current_bg NONE
 set segment_separator \uE0B0
 set right_segment_separator \uE0B2
-set segment_newline "❯ "
+set segment_newline "➜ "
 # ===========================
 # Helper methods
 # ===========================
@@ -124,7 +124,7 @@ end
 
 function prompt_new -d "Add a new line"
     set_color -b normal
-    set_color magenta
+    set_color green
     echo ""
     echo "$segment_newline"
 end
