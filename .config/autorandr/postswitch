@@ -1,4 +1,4 @@
 #!/bin/bash
 
-~/.config/polybar/launch.sh
+# ~/.config/polybar/launch.sh
 ~/.fehbg 
