@@ -1,4 +1,4 @@
 #!/bin/bash
 
-# ~/.config/polybar/launch.sh
+picom -CGb --experimental-backend --config ~/.config/instawm/picom.conf
 ~/.fehbg 

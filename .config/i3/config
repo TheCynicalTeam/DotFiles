@@ -770,17 +770,17 @@ $super_b+$control+g \
 ## Category: Screenshots;
 # Description: Screen Shot (Window);
 $print_b \
-    $exe i3-maim -w
+    $exe wm-maim -w
 
 ## Category: Screenshots;
 # Description: Screen Shot (Select);
 $control_b+Print \
-    $exe i3-maim -s
+    $exe wm-maim -s
 
 ## Category: Screenshots;
 # Description: Screen Shot (Full);
 $super_b+Print \
-    $exe i3-maim -f
+    $exe wm-maim -f
 
 #####################################################################################################################
 #################                          floating or tiled                                        #################
