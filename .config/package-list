@@ -20,7 +20,6 @@ gamehub
 glow
 guitar
 i3-cheat
-i3-maim
 i3-session
 i3-swallow
 i3lock-color
@@ -28,6 +27,7 @@ instamenu
 instamenu-extra
 instamenu-schemas
 instawm-schemas
+lf
 lib32-libxft-bgra
 libxft-bgra
 minecraft-launcher
@@ -56,7 +56,10 @@ recycle-cli
 siji
 timeshift
 touchpad-indicator
+transset-df
+ttf-remixicon
 tty-clock
+wm-maim
 wmappearance
 wmappearance-gtk3
 xcursor-breeze
