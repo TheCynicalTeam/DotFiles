@@ -1,0 +1,71 @@
+"Font stuff
+set guifont=remixicon\ 10
+set guifont=SourceCodePro\ 10
+
+" General
+set relativenumber                  " Show line numbers
+set linebreak	                    " Break lines at word (requires Wrap lines)
+set showbreak=+++	            " Wrap-broken line prefix
+set textwidth=100	            " Line wrap (number of cols)
+set showmatch	                    " Highlight matching brace
+" set spell	                    " Enable spell-checking
+set visualbell	                    " Use visual bell (no beeping)
+
+set hlsearch	                    " Highlight all search results
+set smartcase	                    " Enable smart-case search
+set gdefault	                    " Always substitute all matches in a line
+set ignorecase	                    " Always case-insensitive
+set incsearch	                    " Searches for strings incrementally
+
+set autoindent	                    " Auto-indent new lines
+set cindent	                    " Use 'C' style program indenting
+set expandtab	                    " Use spaces instead of tabs
+set shiftwidth=4	            " Number of auto-indent spaces
+set smartindent	                    " Enable smart-indent
+set smarttab	                    " Enable smart-tabs
+set softtabstop=4	            " Number of spaces per Tab
+
+" Advanced
+set confirm	                    " Prompt confirmation dialogs
+set ruler	                    " Show row and column ruler information
+
+set undolevels=1000	            " Number of undo levels
+set backspace=indent,eol,start	    " Backspace behaviour
+
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+" set the leader key
+let mapleader = "\<Space>"
+
+function! ToggleGUICruft()
+  if &guioptions=='i'
+    exec('set guioptions=imTrL')
+  else
+    exec('set guioptions=i')
+  endif
+endfunction
+
+" set some of my keybinds.
+map <F11> <Esc>:call ToggleGUICruft()<CR>
+
+" by default, hide gui menus
+set guioptions=i
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'dracula/vim', { 'name': 'dracula' }
+
+Plug 'ap/vim-css-color'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" All of your Plugins must be added before the following line
+call plug#end()            " required
+filetype plugin indent on    " required
+syntax enable
+colorscheme dracula
