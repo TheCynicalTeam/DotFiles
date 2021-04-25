@@ -18,6 +18,7 @@ drill-search-gtk
 duf
 gamehub
 glow
+grub2-theme-archlinux
 guitar
 i3-cheat
 i3-session
@@ -41,6 +42,7 @@ nerd-fonts-iosevka
 nerd-fonts-mononoki
 nerd-fonts-roboto-mono
 nerd-fonts-source-code-pro
+octopi
 paru
 perl-checkupdates-aur
 perl-www-aur
@@ -56,6 +58,7 @@ qt6gtk2
 recycle-cli
 siji
 timeshift
+timeshift-autosnap
 touchpad-indicator
 transset-df
 ttf-remixicon

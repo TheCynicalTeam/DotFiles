@@ -103,11 +103,11 @@ end
 
 #check aur and arch packages
 function checkarch
-    pacman -Qqetn >~/package_list.txt
+    pacman -Qqen >~/package_list.txt
 end
 
 function checkaur
-    pacman -Qqetm >~/package_list_aur.txt
+    pacman -Qqem >~/package_list_aur.txt
 end
 
 #rsync commands
