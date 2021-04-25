@@ -1,6 +1,8 @@
+output VIRTUAL1
+off
 output DP-1-0
 off
-output eDP-1
+output eDP1
 crtc 0
 mode 1920x1080
 pos 0x0

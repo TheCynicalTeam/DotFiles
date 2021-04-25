@@ -1,6 +1,0 @@
-[colors]
-# Use xprop to determine window class
-WindowClass1 = #112233
-WindowClass2 = #445566
-# For other windows to use. You can omit that line and it will use standard colorizing scheme.
-fallback = #f1fa8c; #bd93f9; #ff5555; #6be5fd; #50fa7b; #E6DB74; #F83333; #ffb86c; #8BE9FD; #FF79C6;
