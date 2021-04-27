@@ -3,12 +3,14 @@ set guifont=remixicon\ 10
 set guifont=SourceCodePro\ 10
 
 " General
+syntax on                           " show syntax highlighting
 set relativenumber                  " Show line numbers
+set number                          " Set line numbers
 set linebreak	                    " Break lines at word (requires Wrap lines)
-set showbreak=+++	            " Wrap-broken line prefix
-set textwidth=100	            " Line wrap (number of cols)
+set showbreak=+++	                " Wrap-broken line prefix
+set textwidth=100	                " Line wrap (number of cols)
 set showmatch	                    " Highlight matching brace
-" set spell	                    " Enable spell-checking
+" set spell	                        " Enable spell-checking
 set visualbell	                    " Use visual bell (no beeping)
 
 set hlsearch	                    " Highlight all search results
@@ -18,25 +20,31 @@ set ignorecase	                    " Always case-insensitive
 set incsearch	                    " Searches for strings incrementally
 
 set autoindent	                    " Auto-indent new lines
-set cindent	                    " Use 'C' style program indenting
+set cindent	                        " Use 'C' style program indenting
 set expandtab	                    " Use spaces instead of tabs
-set shiftwidth=4	            " Number of auto-indent spaces
+set shiftwidth=4	                " Number of auto-indent spaces
 set smartindent	                    " Enable smart-indent
 set smarttab	                    " Enable smart-tabs
-set softtabstop=4	            " Number of spaces per Tab
+set tabstop=4	                    " Number of spaces per Tab
+set softtabstop=4	                " Number of spaces per Tab
 
 " Advanced
-set confirm	                    " Prompt confirmation dialogs
-set ruler	                    " Show row and column ruler information
+set confirm	                        " Prompt confirmation dialogs
+set ruler	                        " Show row and column ruler information
+set nowrap
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
 
-set undolevels=1000	            " Number of undo levels
+set undolevels=1000	                " Number of undo levels
 set backspace=indent,eol,start	    " Backspace behaviour
 
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
 " set the leader key
-let mapleader = "\<Space>"
+let mapleader = " "
 
 function! ToggleGUICruft()
   if &guioptions=='i'
@@ -60,13 +68,29 @@ call plug#begin('~/.vim/plugged')
 Plug 'dracula/vim', { 'name': 'dracula' }
 
 Plug 'ap/vim-css-color'
+Plug 'jremmen/vim-ripgrep'
+Plug 'tpope/vim-fugitive'
+Plug 'leafgarland/typescript-vim'
+Plug 'vim-utils/vim-man'
+Plug 'lyuts/vim-rtags'
+Plug 'mbbill/undotree'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'wakatime/vim-wakatime'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'valloric/youcompleteme'
 
 " All of your Plugins must be added before the following line
-call plug#end()            " required
-filetype plugin indent on    " required
-syntax enable
+call plug#end()             " required
+filetype plugin indent on   " required
 colorscheme dracula
+set background=dark
+
+
+if executable('rg')
+    let g:rg_derive_root = 'true'
+endif
+
+let g:netrw_browse_split = 2
+let g:netrw_banner = 0
+

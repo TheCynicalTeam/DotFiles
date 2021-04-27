@@ -15,7 +15,7 @@ while [ -n "$LOOPSETTING" ]; do
     unset LOOPSETTING
     case "$CHOICE" in
         Vim)
-            CHOICE="alacritty --title=vim --class=vim,vim -e vim"
+            CHOICE="gvim"
         ;;
         GoDot)
             CHOICE="godot"
