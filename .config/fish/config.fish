@@ -271,6 +271,17 @@ function echoResponce
     echo -e " ✔"
 end
 
+function package_count
+    set red "\033[0;31m"
+    set green "\033[0;32m"
+    set blue "\033[0;34m"
+    set end "\033[0m"
+
+    printf "$red❯❯ Explicit$end: %s\n" (pacman -Qe | wc -l)
+    printf "$green❯❯ Total$end: %s\n" (pacman -Q | wc -l)
+    printf "$blue❯❯ External$end: %s\n" (pacman -Qm | wc -l)
+end
+
 # Keybinding
 bind \ec __history_previous_command
 bind \e\e __sudope
