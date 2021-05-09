@@ -1,5 +1,6 @@
 function fish_greeting
-    bfetch --birthday 16/06
+#    bfetch --birthday 16/06
+    fm6000 -f ~/.config/fm6000/art
 end
 
 # Check ports for current user

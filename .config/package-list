@@ -19,7 +19,6 @@ drill-search-gtk
 duf
 gamehub
 glow
-grub2-theme-archlinux
 guitar
 i3-cheat
 i3-session
@@ -53,9 +52,6 @@ pyfetch
 python-gputil
 python-i3-py
 qt-logout
-qt5-color-widgets
-qt5-styleplugins
-qt6gtk2
 recycle-cli
 siji
 timeshift
@@ -64,6 +60,7 @@ touchpad-indicator
 transset-df
 ttf-remixicon
 tty-clock
+w3m-imgcat
 wm-maim
 wmappearance
 wmappearance-gtk3

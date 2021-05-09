@@ -1,2 +1,2 @@
 #!/bin/sh
-feh --no-fehbg --bg-scale '/home/dt/.config/feh/backgrounds/elementary.png' 
+feh --no-fehbg --bg-scale '/home/dt/.config/feh/backgrounds/endeavour.png' 

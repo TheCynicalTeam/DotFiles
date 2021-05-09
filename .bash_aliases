@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-EDITOR='code'
+EDITOR='gvim'
 
 ## Reset Colors
 Reset='\e[38;5;15m'
