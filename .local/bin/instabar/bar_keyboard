@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+keyboard () {
+    keyboard="$(setxkbmap -query | awk '/layout/{print $2}')"
+    echo  "$keyboard"
+}
+
+keyboard

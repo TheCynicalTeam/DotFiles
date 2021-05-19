@@ -1,0 +1,60 @@
+#!/usr/bin/env bash
+
+volume_alsa() {
+
+    analog=$(pamixer --list-sinks | grep analog | awk '{ print $2 }' | sed 's/"//g')
+    hdmi=$(pamixer --list-sinks | grep hdmi | awk '{ print $2 }' | sed 's/"//g')
+
+    if [ ! -z "$analog" ]; then
+        muted=$(pamixer --sink $analog --get-volume-human | grep muted)
+        vol=$(pamixer --sink $analog --get-volume | sed 's/[^0-9]*//g')
+
+        if [ "$muted" = "muted" ]; then
+            vol_a=" muted"
+        else
+            if [ "$vol" -ge 90 ]; then
+                vol_a=" $vol%"
+            elif [ "$vol" -ge 65 ]; then
+                vol_a=" $vol%"
+            elif [ "$vol" -ge 45 ]; then
+                vol_a=" $vol%"
+            elif [ "$vol" -ge 25 ]; then
+                vol_a=" $vol%"
+            elif [ "$vol" -ge 0 ]; then
+                vol_a=" $vol%"
+            fi
+        fi
+    fi
+
+    if [ ! -z "$hdmi" ]; then
+        muted=$(pamixer --sink $hdmi --get-volume-human | grep muted)
+        vol=$(pamixer --sink $hdmi --get-volume | sed 's/[^0-9]*//g')
+
+        if [ "$muted" = "muted" ]; then
+            vol_a=" muted"
+        else
+            if [ "$vol" -ge 90 ]; then
+                vol_h=" $vol%"
+            elif [ "$vol" -ge 65 ]; then
+                vol_h=" $vol%"
+            elif [ "$vol" -ge 45 ]; then
+                vol_h=" $vol%"
+            elif [ "$vol" -ge 25 ]; then
+                vol_h=" $vol%"
+            elif [ "$vol" -ge 0 ]; then
+                vol_h=" $vol%"
+            fi
+        fi
+    fi
+    if [ ! -z "$vol_a" ] && [ ! -z "$vol_h" ]; then
+        echo -e "$vol_a  | $vol_h "
+    elif [ ! -z "$vol_h" ]; then
+        echo -e "$vol_h "
+    elif [ ! -z "$vol_a" ]; then
+        echo -e "$vol_a "
+    else
+        echo " Auido Disconnected "
+    fi
+}
+
+volume_alsa

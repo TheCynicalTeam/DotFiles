@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+distro() {
+    OS="$(lsb_release -a | grep "Distributor ID:" | sed 's/Distributor ID://g' | awk '{print $1}')"
+    echo  "$OS"
+}
+
+distro

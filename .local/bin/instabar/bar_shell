@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+shell() {
+    if [[ ! -z "$SHELL" ]]; then
+        echo  "$SHELL"
+    else
+        echo "Can not detech shell"
+    fi
+}
+
+shell

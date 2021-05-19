@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+packages() {
+    PACKAGES=$(pacman -Q | wc -l)
+    echo  "$PACKAGES"
+}
+
+packages
+

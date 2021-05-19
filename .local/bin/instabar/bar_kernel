@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+kernel() {
+    KERNEL=$(uname -r | awk '{print $1}') 
+    echo  "$KERNEL"
+}
+
+kernel

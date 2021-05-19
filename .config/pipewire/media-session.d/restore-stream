@@ -7,11 +7,14 @@
   "restore.stream.Output/Audio.application.name:virt-manager": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000 ], "channels": [ "FL", "FR" ] },
   "restore.stream.Input/Audio.application.name:virt-manager": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000 ], "channels": [ "FL", "FR" ] },
   "restore.stream.Output/Audio.media.role:tphonon.streamid": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000 ], "channels": [ "FL", "FR" ] },
-  "restore.stream.Output/Audio.media.role:Movie": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000 ], "channels": [ "FL", "FR" ] },
+  "restore.stream.Output/Audio.media.role:Movie": { "volume": 1.000000, "mute": false, "volumes": [ 0.097340, 0.097340 ], "channels": [ "FL", "FR" ] },
   "restore.stream.Audio/Sink.node.name:alsa_output.pci-0000_01_00.1.pro-audio": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000 ], "channels": [ "UNK", "UNK" ] },
   "restore.stream.Audio/Sink.node.name:alsa_output.pci-0000_01_00.1.pro-audio.2": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000, 1.000000, 1.000000, 1.000000, 1.000000, 1.000000, 1.000000 ], "channels": [ "UNK", "UNK", "UNK", "UNK", "UNK", "UNK", "UNK", "UNK" ] },
   "restore.stream.Audio/Sink.node.name:alsa_output.pci-0000_01_00.1.pro-audio.3": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000, 1.000000, 1.000000, 1.000000, 1.000000, 1.000000, 1.000000 ], "channels": [ "UNK", "UNK", "UNK", "UNK", "UNK", "UNK", "UNK", "UNK" ] },
   "restore.stream.Audio/Sink.node.name:alsa_output.pci-0000_01_00.1.pro-audio.4": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000, 1.000000, 1.000000, 1.000000, 1.000000, 1.000000, 1.000000 ], "channels": [ "UNK", "UNK", "UNK", "UNK", "UNK", "UNK", "UNK", "UNK" ] },
   "restore.stream.Output/Audio.application.name:ALSA plug-in [eurotrucks2]": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000 ], "channels": [ "FL", "FR" ] },
-  "restore.stream.Output/Audio.application.name:ALSA plug-in [python3.9]": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000 ], "channels": [ "FL", "FR" ] }
+  "restore.stream.Output/Audio.application.name:ALSA plug-in [python3.9]": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000 ], "channels": [ "FL", "FR" ] },
+  "restore.stream.Output/Audio.media.role:Music": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000 ], "channels": [ "FL", "FR" ] },
+  "restore.stream.Output/Audio.application.name:ffplay": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000 ], "channels": [ "FL", "FR" ] },
+  "restore.stream.Output/Audio.application.name:ALSA plug-in [mplayer]": { "volume": 1.000000, "mute": false, "volumes": [ 1.000000, 1.000000 ], "channels": [ "FL", "FR" ] }
 }

@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+updates() {
+    configFile=$HOME/.config/instawm/instabar/bar_updates.ini
+
+    timestamp=$(date +%s)
+    [[ -f $configFile ]] && . $configFile
+    if [ -z "$LastUsed" ] || [ -z "$Message" ]; then
+        updates=$(checkupdates+aur | wc -l)
+        if [ "$updates" -eq "0" ]; then
+            updatecount=" No Updates"
+        elif [ "$updates" -ge "1" ]; then
+            updatecount=" $updates Update"
+        else
+            updatecount=" $updates Updates"
+        fi
+        echo "${updatecount}"
+        newtime=`expr $timestamp + 300`
+        echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" > $configFile
+    else
+        if [ "$timestamp" -ge "$LastUsed" ]; then
+            updates=$(checkupdates+aur | wc -l)
+            if [ "$updates" -eq "0" ]; then
+                updatecount=" No Updates"
+            elif [ "$updates" -ge "1" ]; then
+                updatecount=" $updates Update"
+            else
+                updatecount=" $updates Updates"
+            fi
+            echo "${updatecount}"
+            newtime=`expr $timestamp + 300`
+            echo -e "LastUsed=${newtime}\nMessage='${updatecount}'" > $configFile
+        else
+            echo "${Message}"
+        fi
+    fi
+}
+
+updates
+

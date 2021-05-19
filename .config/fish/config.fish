@@ -52,8 +52,8 @@ function update
     pacman -Syu
 end
 
-function paru-update
-    paru -Syu
+function instaupdate
+    instaaur -c
 end
 
 #clear command

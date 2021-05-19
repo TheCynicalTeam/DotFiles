@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+network() {
+    netwworname=$(nmcli -t -f active,ssid dev wifi | awk -F' +' '{ if (!seen[$2]++) print}' | egrep '^yes' | cut -d\: -f2)
+    net=$(nmcli dev wifi | grep -E '^[*]' | awk -F' +' '{ if (!seen[$2]++) print $8}')
+    if [ "$net" -ge 90 ]; then
+        echo " $netwworname"
+    elif [ "$net" -ge 65 ]; then
+        echo " $netwworname"
+    elif [ "$net" -ge 25 ]; then
+        echo " $netwworname"
+    elif [ "$net" -ge 0 ]; then
+        echo " $netwworname"
+    fi
+}
+
+network

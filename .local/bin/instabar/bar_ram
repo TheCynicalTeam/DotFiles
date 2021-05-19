@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+ram() {
+    mem=$(free -h | awk '/Mem:/ { print $3 }' | cut -f1 -d 'i')
+    echo  "$mem"
+}
+
+ram

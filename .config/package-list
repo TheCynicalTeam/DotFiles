@@ -17,6 +17,7 @@ dracula-gtk-theme
 drill-search-cli
 drill-search-gtk
 duf
+fm6000
 gamehub
 glow
 guitar
@@ -24,6 +25,7 @@ i3-cheat
 i3-session
 i3-swallow
 i3lock-color
+instaaur
 instamenu
 instamenu-extra
 instamenu-schemas
@@ -67,3 +69,4 @@ wmappearance-gtk3
 xcursor-breeze
 xtitle
 xwingridselect
+yubikey-manager
