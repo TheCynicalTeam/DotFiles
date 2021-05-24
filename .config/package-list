@@ -3,10 +3,8 @@ alpm_octopi_utils
 anymeal
 auracle
 aurutils
-autotiling
 bfetch
 bspwm-cheat
-bumblebee-status
 checkupdates+aur
 checkupdates-aur
 ckb-next
@@ -20,7 +18,6 @@ duf
 fm6000
 gamehub
 glow
-guitar
 i3-cheat
 i3-session
 i3-swallow
@@ -31,8 +28,8 @@ instamenu-extra
 instamenu-schemas
 instawm
 instawm-schemas
-lf
 lib32-libxft-bgra
+libart-lgpl
 libxft-bgra
 minecraft-launcher
 multimonitorlock
@@ -48,11 +45,9 @@ octopi
 paru
 perl-checkupdates-aur
 perl-www-aur
-picker
 polkit-dumb-agent
 pyfetch
 python-gputil
-python-i3-py
 qt-logout
 recycle-cli
 siji
@@ -64,8 +59,6 @@ ttf-remixicon
 tty-clock
 w3m-imgcat
 wm-maim
-wmappearance
-wmappearance-gtk3
 xcursor-breeze
 xtitle
 xwingridselect

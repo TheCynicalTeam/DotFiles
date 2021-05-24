@@ -56,6 +56,10 @@ function instaupdate
     instaaur -c
 end
 
+function aurupdate
+    auracle update -C ~/.cache/instaaur/pkg
+end
+
 #clear command
 function clear
     command reset && fish
