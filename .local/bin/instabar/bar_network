@@ -1,17 +1,33 @@
 #!/usr/bin/env bash
 
 network() {
-    netwworname=$(nmcli -t -f active,ssid dev wifi | awk -F' +' '{ if (!seen[$2]++) print}' | egrep '^yes' | cut -d\: -f2)
-    net=$(nmcli dev wifi | grep -E '^[*]' | awk -F' +' '{ if (!seen[$2]++) print $8}')
-    if [ "$net" -ge 90 ]; then
-        echo " $netwworname"
-    elif [ "$net" -ge 65 ]; then
-        echo " $netwworname"
-    elif [ "$net" -ge 25 ]; then
-        echo " $netwworname"
-    elif [ "$net" -ge 0 ]; then
-        echo " $netwworname"
+    R1=`cat /sys/class/net/wlan0/statistics/rx_bytes`
+    T1=`cat /sys/class/net/wlan0/statistics/tx_bytes`
+    sleep 1
+    R2=`cat /sys/class/net/wlan0/statistics/rx_bytes`
+    T2=`cat /sys/class/net/wlan0/statistics/tx_bytes`
+    TBPS=`expr $T2 - $T1`
+    RBPS=`expr $R2 - $R1`
+    TKBPS=`expr $TBPS / 1024`
+    RKBPS=`expr $RBPS / 1024`
+    icon_down=""
+    icon_up=""
+    if [$RKBPS -gt "1024"]; then
+        RKBPS=`expr $RKBPS / 1024`
+        RKBPS="$RKBPS mb"
+    else
+        RKBPS="$RKBPS kb"
     fi
+
+    if [$RKBPS -gt "1024"]; then
+        TKBPS=`expr $TKBPS / 1024`
+        TKBPS="$TKBPS mb"
+    else
+        TKBPS="$TKBPS kb"
+    fi
+
+    printf " %s %s %s %s \n" "$icon_down" "$RKBPS" "$icon_up" "$TKBPS"
+
 }
 
 network

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 getuptime() {
+    icon=""
+
     uptime -p >/dev/null 2>&1
 
     if [ "$?" -eq 0 ]; then
@@ -18,7 +20,7 @@ getuptime() {
       s/  / /; s/, *[[:digit:]]* users?.*//')
     fi
 
-    echo  "$UP"
+    printf " %s %s \n" "$icon" "$UP"
 }
 
 getuptime

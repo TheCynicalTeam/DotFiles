@@ -1,15 +1,19 @@
 #!/usr/bin/env bash
 
 desktop() {
+    icon=""
+
     if [[ ! -z "$XDG_CURRENT_DESKTOP" ]]; then
-        echo  "$XDG_CURRENT_DESKTOP"
+        desktop="$XDG_CURRENT_DESKTOP"
     elif [[ ! -z "$XDG_SESSION_DESKTOP" ]]; then
-        echo  "$XDG_SESSION_DESKTOP"
+        desktop="$XDG_SESSION_DESKTOP"
     elif [[ ! -z "$DESKTOP_SESSION" ]]; then
-        echo  "$DESKTOP_SESSION"
+        desktop="$DESKTOP_SESSION"
     else
-        echo "Can not detech desktop"
+        desktop="Can not detech desktop"
     fi
+
+    printf " %s %s \n" "$icon" "$desktop"
 }
 
 desktop

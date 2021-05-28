@@ -42,10 +42,13 @@ DaySuffix() {
 
 
 clock() {
+    icon_date=""
+    icon_time=""
+
     date=$(date +"%-d`DaySuffix` %b %Y")
     time=$(date +"%I:%M %P")
 
-    echo " $date  $time"
+    printf " %s %s %s %s \n" "$icon_date" "$date" "$icon_time" "$time"
 }
 
 clock

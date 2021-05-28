@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
 ram() {
-    mem=$(free -h | awk '/Mem:/ { print $3 }' | cut -f1 -d 'i')
-    echo  "$mem"
+    icon=""
+
+    ram=$(free -h | awk '/Mem:/ { print $3 }' | cut -f1 -d 'i')
+
+    printf " %s %s \n" "$icon" "$ram"
 }
 
 ram

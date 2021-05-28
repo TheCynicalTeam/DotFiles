@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+weather() {
+    configFile=$HOME/.config/instawm/instabar/bar_weather.ini
+
+    timestamp=$(date +%s)
+    icon=""
+    [[ -f $configFile ]] && . $configFile
+    if [ -z "$LastUsed" ] || [ -z "$Message" ]; then
+        weather=$(curl -s wttr.in/Darlington-UK?format=%t)
+        printf " %s %s \n" "$icon" "$weather"
+        newtime=`expr $timestamp + 900`
+        echo -e "LastUsed=${newtime}\nMessage='${weather}'" > $configFile
+    else
+        if [ "$timestamp" -ge "$LastUsed" ]; then
+            weather=$(curl -s wttr.in/Darlington-UK?format=%t)
+            printf " %s %s \n" "$icon" "$weather"
+            newtime=`expr $timestamp + 900`
+            echo -e "LastUsed=${newtime}\nMessage='${weather}'" > $configFile
+        else
+            printf " %s %s \n" "$icon" "$Message"
+        fi
+    fi
+}
+
+weather
+

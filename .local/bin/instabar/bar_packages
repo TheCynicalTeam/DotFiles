@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 
 packages() {
-    PACKAGES=$(pacman -Q | wc -l)
-    echo  "$PACKAGES"
+    packages=$(pacman -Q | wc -l)
+    icon=""
+    printf " %s %s \n" "$icon" "$packages"
 }
 
 packages

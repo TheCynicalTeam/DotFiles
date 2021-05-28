@@ -47,13 +47,22 @@ volume_alsa() {
         fi
     fi
     if [ ! -z "$vol_a" ] && [ ! -z "$vol_h" ]; then
-        echo -e "$vol_a  | $vol_h "
+        icon_a=""
+        icon_h=""
+
+        printf " %s %s  %s %s \n" "$vol_a" "$icon_a" "$vol_h" "$icon_h"
     elif [ ! -z "$vol_h" ]; then
-        echo -e "$vol_h "
+        icon_h=""
+
+        printf " %s %s \n" "$vol_h" "$icon_h"
     elif [ ! -z "$vol_a" ]; then
-        echo -e "$vol_a "
+        icon_a=""
+
+        printf " %s %s \n" "$vol_a" "$icon_a"
     else
-        echo " Auido Disconnected "
+        icon=""
+        text="Auido Disconnected"
+        printf " %s %s %s \n" "$icon" "$text" "$icon"
     fi
 }
 

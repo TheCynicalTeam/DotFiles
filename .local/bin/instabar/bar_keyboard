@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
 keyboard () {
+    icon=""
+
     keyboard="$(setxkbmap -query | awk '/layout/{print $2}')"
-    echo  "$keyboard"
+    
+    printf " %s %s \n" "$icon" "$keyboard"
 }
 
 keyboard

@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 sep() {
-    echo " | "
+    sep="|"
+    printf " %s \n" "$sep"
 }
 
 sep
