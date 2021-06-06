@@ -8,16 +8,16 @@ set relativenumber                  " Show line numbers
 set number                          " Set line numbers
 set linebreak	                    " Break lines at word (requires Wrap lines)
 set showbreak=+++	                " Wrap-broken line prefix
-set textwidth=100	                " Line wrap (number of cols)
+set textwidth=0	                    " Line wrap (number of cols)
 set showmatch	                    " Highlight matching brace
 " set spell	                        " Enable spell-checking
 set visualbell	                    " Use visual bell (no beeping)
 
-set hlsearch	                    " Highlight all search results
 set smartcase	                    " Enable smart-case search
 set gdefault	                    " Always substitute all matches in a line
 set ignorecase	                    " Always case-insensitive
 set incsearch	                    " Searches for strings incrementally
+set nohlsearch                      " No longer highlight searches
 
 set autoindent	                    " Auto-indent new lines
 set cindent	                        " Use 'C' style program indenting
@@ -32,19 +32,22 @@ set softtabstop=4	                " Number of spaces per Tab
 set confirm	                        " Prompt confirmation dialogs
 set ruler	                        " Show row and column ruler information
 set nowrap
+set hidden
 set noswapfile
 set nobackup
 set undodir=~/.vim/undodir
 set undofile
+set scrolloff=8
+set signcolumn=yes
 
 set undolevels=1000	                " Number of undo levels
 set backspace=indent,eol,start	    " Backspace behaviour
 
-source $VIMRUNTIME/mswin.vim
-behave mswin
+" by default, hide gui menus
+set guioptions=i
 
-" set the leader key
-let mapleader = " "
+set nocompatible              " be iMproved, required
+filetype off                  " required
 
 function! ToggleGUICruft()
   if &guioptions=='i'
@@ -57,12 +60,6 @@ endfunction
 " set some of my keybinds.
 map <F11> <Esc>:call ToggleGUICruft()<CR>
 
-" by default, hide gui menus
-set guioptions=i
-
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
 call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim', { 'name': 'dracula' }
@@ -70,6 +67,7 @@ Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'ap/vim-css-color'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
@@ -79,6 +77,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'wakatime/vim-wakatime'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'valloric/youcompleteme'
+Plug 'mhinz/vim-startify'
 
 " All of your Plugins must be added before the following line
 call plug#end()             " required
@@ -86,11 +85,16 @@ filetype plugin indent on   " required
 colorscheme dracula
 set background=dark
 
-
 if executable('rg')
     let g:rg_derive_root = 'true'
 endif
 
 let g:netrw_browse_split = 2
 let g:netrw_banner = 0
+
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
+" set the leader key
+let mapleader = " "
 

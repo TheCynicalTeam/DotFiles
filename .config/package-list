@@ -19,11 +19,13 @@ eso-wallpapers-git
 fm6000
 gamehub
 glow
+gnvim
 gotop
 i3-cheat
 i3-session
 i3-swallow
 i3lock-color
+imagewriter
 instaaur
 instamenu
 instamenu-extra
@@ -37,6 +39,7 @@ minecraft-launcher
 multimonitorlock
 multimonitorlock-gui
 nbteditor
+neovim-symlinks
 nerd-fonts-fira-code
 nerd-fonts-hack
 nerd-fonts-iosevka
