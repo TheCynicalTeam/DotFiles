@@ -1,4 +1,5 @@
 function fish_prompt
+    set -g fish_prompt_pwd_dir_length 3
     # Cache exit status
     set -l last_status $status
 

@@ -5,7 +5,7 @@ asksetting() {
 while read line; do
 # reading each line
 echo $line
-done < $OPENPROGRAMS | instamenu -c -l 10 -w -400 -i -h -1 -bw 4 -q "${1:-Search...}"
+done < $OPENPROGRAMS | instamenu -c -l 15 -w -400 -i -h -1 -bw 4 -q "${1:-Search...}" -wm
 }
 
 LOOPSETTING="true"
@@ -14,22 +14,22 @@ while [ -n "$LOOPSETTING" ]; do
     [ -n "$CHOICE" ] || exit
     unset LOOPSETTING
     case "$CHOICE" in
-        Vim)
+        *Vim)
             CHOICE="gvim"
         ;;
-        GoDot)
+        *GoDot)
             CHOICE="godot"
         ;;
-        gParted)
+        *gParted)
             CHOICE="gparted"
         ;;
-        MultiMC)
+        *MultiMC)
             CHOICE="prime-run multimc"
         ;;
-        Steam)
+        *Steam)
             CHOICE="prime-run steam"
         ;;
-        Tiled)
+        *Tiled)
             CHOICE="tiled"
         ;;
         *)

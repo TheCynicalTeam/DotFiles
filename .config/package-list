@@ -1,5 +1,4 @@
 adwaita-qt
-alpm_octopi_utils
 anymeal
 auracle
 aurutils
@@ -20,6 +19,7 @@ eso-wallpapers-git
 fm6000
 gamehub
 glow
+gotop
 i3-cheat
 i3-session
 i3-swallow
@@ -43,8 +43,6 @@ nerd-fonts-iosevka
 nerd-fonts-mononoki
 nerd-fonts-roboto-mono
 nerd-fonts-source-code-pro
-octopi
-paru
 perl-checkupdates-aur
 perl-www-aur
 polkit-dumb-agent
@@ -64,4 +62,3 @@ wm-maim
 xcursor-breeze
 xtitle
 xwingridselect
-yubikey-manager

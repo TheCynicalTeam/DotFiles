@@ -10,5 +10,5 @@ if ! command -v xautolock &> /dev/null; then
     echo "xautolock could not be found"
     exit
 else
-    xautolock -time 10 -locker 'multimonitorlock -l -- --timestr="%H:%M"' -notify 30 -notifier "notify-send -u critical -- 'LOCKING screen in 30 seconds'" &
+    xautolock -time 10 -locker 'multimonitorlock -l -- --time-str="%H:%M"' -notify 30 -notifier "notify-send -u critical -- 'LOCKING screen in 30 seconds'" &
 fi
