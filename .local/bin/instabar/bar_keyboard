@@ -4,8 +4,8 @@ keyboard () {
     icon=""
 
     keyboard="$(setxkbmap -query | awk '/layout/{print $2}')"
-    
-    printf " %s %s \n" "$icon" "$keyboard"
+
+    printf " %s %s \n" "$icon" "${keyboard^^}"
 }
 
 keyboard

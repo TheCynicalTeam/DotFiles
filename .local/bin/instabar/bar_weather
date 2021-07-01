@@ -6,18 +6,25 @@ weather() {
     icon=""
     [[ -f $configFile ]] && . $configFile
     if [ -z "$LastUsed" ] || [ -z "$Message" ]; then
-        weather=$(curl -s wttr.in/Darlington-UK?format=%t)
+        weather=$(ansiweather | awk '{print $4 $5}')
         printf " %s %s \n" "$icon" "$weather"
         newtime=`expr $timestamp + 900`
         echo -e "LastUsed=${newtime}\nMessage='${weather}'" > $configFile
     else
-        if [ "$timestamp" -ge "$LastUsed" ]; then
-            weather=$(curl -s wttr.in/Darlington-UK?format=%t)
+        if [ "$Message" == "weatherdata" ]; then
+            weather=$(ansiweather | awk '{print $4 $5}')
             printf " %s %s \n" "$icon" "$weather"
             newtime=`expr $timestamp + 900`
             echo -e "LastUsed=${newtime}\nMessage='${weather}'" > $configFile
         else
-            printf " %s %s \n" "$icon" "$Message"
+            if [ "$timestamp" -ge "$LastUsed" ]; then
+                weather=$(ansiweather | awk '{print $4 $5}')
+                printf " %s %s \n" "$icon" "$weather"
+                newtime=`expr $timestamp + 900`
+                echo -e "LastUsed=${newtime}\nMessage='${weather}'" > $configFile
+            else
+                printf " %s %s \n" "$icon" "$Message"
+            fi
         fi
     fi
 }

@@ -8,25 +8,25 @@ network() {
     T2=`cat /sys/class/net/wlan0/statistics/tx_bytes`
     TBPS=`expr $T2 - $T1`
     RBPS=`expr $R2 - $R1`
-    TKBPS=`expr $TBPS / 1024`
-    RKBPS=`expr $RBPS / 1024`
-    icon_down=""
-    icon_up=""
-    if [$RKBPS -gt "1024"]; then
-        RKBPS=`expr $RKBPS / 1024`
+    TKBPS=`echo "$TBPS / 1024"| bc`
+    RKBPS=`echo "$RBPS / 1024"| bc`
+    icon_up=""
+    icon_down=""
+    if [ "$RKBPS" -gt "1024" ]; then
+        RKBPS=`echo "scale=2; $RKBPS / 1024"| bc`
         RKBPS="$RKBPS mb"
     else
         RKBPS="$RKBPS kb"
     fi
 
-    if [$RKBPS -gt "1024"]; then
-        TKBPS=`expr $TKBPS / 1024`
+    if [ "$TKBPS" -gt "1024" ]; then
+        TKBPS=`echo "scale=2; $TKBPS / 1024"| bc`
         TKBPS="$TKBPS mb"
     else
         TKBPS="$TKBPS kb"
     fi
 
-    printf " %s %s %s %s \n" "$icon_down" "$RKBPS" "$icon_up" "$TKBPS"
+    printf " %s %s %s %s \n" "$icon_down" "${RKBPS^^}" "$icon_up" "${TKBPS^^}"
 
 }
 

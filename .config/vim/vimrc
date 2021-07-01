@@ -98,3 +98,13 @@ behave mswin
 " set the leader key
 let mapleader = " "
 
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
+augroup TheRepoClub
+    autocmd!
+    autocmd BufWritePre * :call TrimWhitespace()
+augroup END
