@@ -1,6 +1,7 @@
 "Font stuff
-set guifont=remixicon\ 10
-set guifont=SourceCodePro\ 10
+" Set font on start
+let g:Guifont="remixicon:h10"
+let g:Guifont="Source\ Code\ Pro:h10"
 
 " General
 syntax on                           " show syntax highlighting
