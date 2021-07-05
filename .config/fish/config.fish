@@ -9,17 +9,17 @@ function ports
 end
 
 #set permissions for user
-function setperm --argument-names "filename"
-    sudo chown dt:dt $filename
+function setperm
+    sudo chown dt:dt $argv
 end
 
 #list comamnds
-function l --argument-names "filename"
-    lsd $filename
+function l
+    lsd $argv
 end
 
-function ls --argument-names "filename"
-    lsd $filename
+function ls
+    lsd $argv
 end
 
 function la
@@ -38,8 +38,8 @@ function lt
     ls --tree
 end
 
-function lg --argument-names "filename"
-    ls -A | egrep $filename
+function lg
+    ls -A | egrep $argv
 end
 
 # Update Repo
@@ -86,24 +86,24 @@ function update-grub
 end
 
 #youtube-dl commands
-function yta-aac --argument-names "filename"
-    youtube-dl --extract-audio --audio-format aac $filename
+function yta-aac
+    youtube-dl --extract-audio --audio-format aac $argv
 end
 
-function yta-best --argument-names "filename"
-    youtube-dl --extract-audio --audio-format best $filename
+function yta-best
+    youtube-dl --extract-audio --audio-format best $argv
 end
 
-function yta-m4a --argument-names "filename"
-    youtube-dl --extract-audio --audio-format m4a $filename
+function yta-m4a
+    youtube-dl --extract-audio --audio-format m4a $argv
 end
 
-function yta-mp3 --argument-names "filename"
-    youtube-dl --extract-audio --audio-format mp3 $filename
+function yta-mp3
+    youtube-dl --extract-audio --audio-format mp3 $argv
 end
 
-function yta-wav --argument-names "filename"
-    youtube-dl --extract-audio --audio-format wav $filename
+function yta-wav
+    youtube-dl --extract-audio --audio-format wav $argv
 end
 
 #check aur and arch packages
@@ -116,128 +116,128 @@ function checkaur
 end
 
 #rsync commands
-function rsync-move --argument-names "filename"
-    rsync -avz --progress -h --remove-source-files $filename
+function rsync-move
+    rsync -avz --progress -h --remove-source-files $argv
 end
 
-function rsync-synchronize --argument-names "filename"
-    rsync -avzu --delete --progress -h $filename
+function rsync-synchronize
+    rsync -avzu --delete --progress -h $argv
 end
 
-function rsync-update --argument-names "filename"
-    rsync -avzu --progress -h $filename
+function rsync-update
+    rsync -avzu --progress -h $argv
 end
 
-function rsync-copy --argument-names "filename"
-    rsync -avz --progress -h $filename
+function rsync-copy
+    rsync -avz --progress -h $argv
 end
 
 #github commands
-function g --argument-names "git"
-    git $git
+function g
+    git $argv
 end
 
-function gadd --argument-names "git"
-    git add $git
+function gadd
+    git add $argv
 end
 
-function gbranch --argument-names "git"
-    git branch $git
+function gbranch
+    git branch $argv
 end
 
-function gcommit --argument-names "git"
-    git commit -S -v $git
+function gcommit
+    git commit -S -v $argv
 end
 
-function gcommitmsg --argument-names "git"
-    git commit -S -m $git
+function gcommitmsg
+    git commit -S -m $argv
 end
 
-function gclone --argument-names "git"
-    git clone $git
+function gclone
+    git clone $argv
 end
 
-function gclean --argument-names "git"
-    git clean -id $git
+function gclean
+    git clean -id $argv
 end
 
-function gdiff --argument-names "git"
-    git diff $git
+function gdiff
+    git diff $argv
 end
 
-function gfetch --argument-names "git"
-    git fetch $git
+function gfetch
+    git fetch $argv
 end
 
-function ghelp --argument-names "git"
-    git help $git
+function ghelp
+    git help $argv
 end
 
-function gpull --argument-names "git"
-    git pull $git
+function gpull
+    git pull $argv
 end
 
 
-function gmerge --argument-names "git"
-    git merge $git
+function gmerge
+    git merge $argv
 end
 
-function gpush --argument-names "git"
-    git push $git
+function gpush
+    git push $argv
 end
 
-function gremote --argument-names "git"
-    git remote $git
+function gremote
+    git remote $argv
 end
 
-function grebase --argument-names "git"
-    git rebase $git
+function grebase
+    git rebase $argv
 end
 
-function grevert --argument-names "git"
-    git revert $git
+function grevert
+    git revert $argv
 end
 
-function greset --argument-names "git"
-    git reset $git
+function greset
+    git reset $argv
 end
 
-function grm --argument-names "git"
-    git rm $git
+function grm
+    git rm $argv
 end
 
-function gremote --argument-names "git"
-    git remote remove $git
+function gremote
+    git remote remove $argv
 end
 
-function grestore --argument-names "git"
-    git restore $git
+function grestore
+    git restore $argv
 end
 
-function greset --argument-names "git"
-    git reset -- $git
+function greset
+    git reset -- $argv
 end
 
-function gshow --argument-names "git"
-    git show $git
+function gshow
+    git show $argv
 end
 
-function gstatus --argument-names "git"
-    git status $git
+function gstatus
+    git status $argv
 end
 
-function gstash --argument-names "git"
-    git stash $git
+function gstash
+    git stash $argv
 end
 
-function updaterepo --argument-names "type"
+function updaterepo
     while true
         read -l -P "Are you sure you want to update arch repo? [y/N] " confirm
 
         switch $confirm
             case Y y
                 cd ~/.gitlabs/Arch.TheRepo.Club/
-                ./git-v1.sh $type
+                ./git-v1.sh $argv
                 cd $dirprev[1]
                 echoResponce "Arch repo has been updated."
                 return

@@ -1,9 +1,9 @@
 "Font stuff
-" Set font on start
 let g:Guifont="remixicon:h10"
 let g:Guifont="Source\ Code\ Pro:h10"
 
 " General
+set encoding=UTF-8
 syntax on                           " show syntax highlighting
 set relativenumber                  " Show line numbers
 set number                          " Set line numbers
@@ -32,6 +32,10 @@ set softtabstop=4	                " Number of spaces per Tab
 " Advanced
 set confirm	                        " Prompt confirmation dialogs
 set ruler	                        " Show row and column ruler information
+set noshowmode
+set noruler
+set noshowcmd
+set cmdheight=1
 set nowrap
 set hidden
 set noswapfile
@@ -44,26 +48,16 @@ set signcolumn=yes
 set undolevels=1000	                " Number of undo levels
 set backspace=indent,eol,start	    " Backspace behaviour
 
-" by default, hide gui menus
-set guioptions=i
-
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
-function! ToggleGUICruft()
-  if &guioptions=='i'
-    exec('set guioptions=imTrL')
-  else
-    exec('set guioptions=i')
-  endif
-endfunction
-
-" set some of my keybinds.
-map <F11> <Esc>:call ToggleGUICruft()<CR>
 
 call plug#begin('~/.vim/plugged')
 
 Plug 'dracula/vim', { 'name': 'dracula' }
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 
 Plug 'ap/vim-css-color'
 Plug 'jremmen/vim-ripgrep'
@@ -73,15 +67,20 @@ Plug 'leafgarland/typescript-vim'
 Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
 Plug 'mbbill/undotree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'hoob3rt/lualine.nvim'
+"Plug 'itchyny/lightline.vim'
+Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'valloric/youcompleteme'
 Plug 'mhinz/vim-startify'
 
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+
 " All of your Plugins must be added before the following line
 call plug#end()             " required
+
 filetype plugin indent on   " required
 colorscheme dracula
 set background=dark
