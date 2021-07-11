@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ##################################################################################################################
 # Author 	: 	The-Repo-Club
 # Website	:	https://github.com/The-Repo-Club/
@@ -24,7 +24,7 @@ read input
 
 # Committing to the local repository with a message containing the time details and commit text
 
-git commit -S -m "$input"
+git commit -m "$input"
 
 # Push the local files to github
 
