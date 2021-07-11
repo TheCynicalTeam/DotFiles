@@ -21,7 +21,7 @@ hi! link StartifyBracket StartifyPath
 hi! link StartifyNumber Title
 
 function! s:lsGitDir()
-    let files = systemlist('getfolders -f ~/.gitlabs/')
+    let files = systemlist('getfolders -a ~/.gitlabs/')
     return map(files, "{'line': v:val, 'path': v:val}")
 endfunction
 
