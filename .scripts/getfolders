@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+folder_flag=
+
+getFolderFiles() {
+    folders=$(stat -c "%n" $@/*/ 2>/dev/null)
+
+    for folder in $folders; do
+        dir=${folder%/*}     # trim everything past the last /
+        dir=${dir##*/}       # ...then remove everything before the last / remaining
+        printf '%s\n' "$dir" # demonstrate output
+    done
+}
+
+while true; do
+    case $1 in
+        -f|--folder)
+            folder_flag=1
+            shift
+            ;;
+        *)
+            break
+            ;;
+    esac
+done
+
+if [[ "$folder_flag" ]]; then
+    getFolderFiles "$@"
+else
+    getFolderFiles "$PWD"
+fi
