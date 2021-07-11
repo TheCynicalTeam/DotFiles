@@ -58,6 +58,7 @@ Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 Plug 'ap/vim-css-color'
 Plug 'jremmen/vim-ripgrep'
