@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+image=${PWD##*/}
+num=0
+
+for f in *.jpg; do
+    num=`expr $num + 1`
+    mv "$f" "${image}_$num.png"
+done
