@@ -114,7 +114,36 @@ hi! link StartifySlash StartifyPath
 hi! link StartifyBracket StartifyPath
 hi! link StartifyNumber Title
 
-let g:startify_custom_header = []
+
+let s:header = [
+      \ '                                                               ',
+      \ '        _   ___     _____ __  __          ___   ____   ___     ',
+      \ '       | \ | \ \   / /_ _|  \/  | __   __/ _ \ | ___| / _ \    ',
+      \ '       |  \| |\ \ / / | || |\/| | \ \ / / | | ||___ \| | | |   ',
+      \ '       | |\  | \ V /  | || |  | |  \ V /| |_| | ___) | |_| |   ',
+      \ '       |_| \_|  \_/  |___|_|  |_|   \_/  \___(_)____(_)___/    ',
+      \ '                                                               ',
+      \ '              [ Think NeoVim   Author:The-Repo-Club ]          ',
+      \ ]
+
+let s:footer = [
+    \ '         +-----------------------------------------------+',
+    \ '         |                Think NeoVim ^_^               |',
+    \ '         |       Talk is cheap Show me the code          |',
+    \ '         |                                               |',
+    \ '         |            Github:The-Repo-Club               |',
+    \ '         +-----------------------------------------------+',
+    \ ]
+
+function! s:center(lines) abort
+  let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
+  let centered_lines = map(copy(a:lines),
+        \ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
+  return centered_lines
+endfunction
+
+let g:startify_custom_header = s:center(s:header)
+let g:startify_custom_footer = s:center(s:footer)
 
 function! s:lsGitDir()
     let files = systemlist('getfolders -a ~/.gitlabs/')
@@ -132,12 +161,13 @@ function! s:lsCwd()
 endfunction
 
 let g:startify_lists = [
-    \ { 'type': 'bookmarks',                  'header': ['   Bookmarks']},
-    \ { 'type': function('s:lsCwd'),          'header': ['   Current Directory: ']},
-    \ { 'type': function('s:lsGitDir'),       'header': ['   Git projects']},
-    \ { 'type': function('s:lsAurDir'),       'header': ['   AUR projects']},
-    \ { 'type': 'sessions',                   'header': ['   Sessions']},
-    \ { 'type': 'files',                      'header': ['   Recent files']},
+    \ { 'type': 'bookmarks',                    'header': ['   Bookmarks']},
+    "\ { 'type': 'commands',                     'header': ['   Commands']},
+    \ { 'type': function('s:lsCwd'),            'header': ['   Current Directory: ']},
+    \ { 'type': function('s:lsGitDir'),         'header': ['   Git projects']},
+    \ { 'type': function('s:lsAurDir'),         'header': ['   AUR projects']},
+    \ { 'type': 'sessions',                     'header': ['   Sessions']},
+    \ { 'type': 'files',                        'header': ['   Recent files']},
     \ ]
 
 let g:startify_bookmarks = [
@@ -145,11 +175,12 @@ let g:startify_bookmarks = [
     "\ { 'd': '~/downloads/' },
     \ { 'c': '~/.config' },
     \ { 'n': '~/.config/nvim/init.vim' },
-    \ { 'p': '~/.config/nvim/plugin/bookmarks.vim' },
-    \ { 'p': '~/.config/nvim/plugin/keybinds.vim' },
-    \ { 'k': '~/.config/nvim/plugin/lists.vim' },
     \ { 'e': '~/.config/nvim/plugin/lualine.lua' },
     \ ]
+
+let g:startify_commands = [
+        \ {'h': 'h ref'},
+        \ ]
 
 let g:lightline = {
     \ 'colorscheme': 'dracula',
@@ -157,6 +188,10 @@ let g:lightline = {
 
 " set the leader key
 let mapleader = " "
+
+"set keybinds
+nnoremap <leader>sw <cmd>vertical resize 175<cr>
+nnoremap <leader>ss <cmd>Startify<cr>
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
@@ -166,5 +201,7 @@ endfun
 
 augroup TheRepoClub
     autocmd!
+    autocmd BufEnter * if !exists('b:has_been_entered') |
+                \ vertical resize 175 | endif
     autocmd BufWritePre * :call TrimWhitespace()
 augroup END
