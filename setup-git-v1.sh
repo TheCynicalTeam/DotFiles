@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 ##################################################################################################################
 # Author 	: 	The-Repo-Club
 # Website	:	https://github.com/The-Repo-Club/
