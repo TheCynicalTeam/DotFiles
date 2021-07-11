@@ -26,7 +26,7 @@ function! s:lsGitDir()
 endfunction
 
 function! s:lsCwd()
-    let files = systemlist('stat -c "%F %n" * | grep "file" | rev | cut -f 1 -d " " | rev 2>/dev/null')
+    let files = systemlist('find . -maxdepth 1 -not -path "*/\.*" -type f | sed "s/^.\///" 2>/dev/null')
     return map(files, "{'line': v:val, 'path': v:val}")
 endfunction
 
