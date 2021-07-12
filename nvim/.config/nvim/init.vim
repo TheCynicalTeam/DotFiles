@@ -56,11 +56,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'dracula/vim', { 'name': 'dracula' }
 
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-telescope/telescope.nvim'
-"Plug 'nvim-telescope/telescope-fzy-native.nvim'
-
 Plug 'ap/vim-css-color'
 Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-fugitive'
@@ -70,15 +65,11 @@ Plug 'vim-utils/vim-man'
 Plug 'lyuts/vim-rtags'
 Plug 'mbbill/undotree'
 Plug 'hoob3rt/lualine.nvim'
-"Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'wakatime/vim-wakatime'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'valloric/youcompleteme'
 Plug 'mhinz/vim-startify'
-
-"Plug 'vim-airline/vim-airline'
-"Plug 'vim-airline/vim-airline-themes'
 
 " All of your Plugins must be added before the following line
 call plug#end()             " required
@@ -115,18 +106,19 @@ hi! link StartifyBracket StartifyPath
 hi! link StartifyNumber Title
 
 
-let s:header = [
-      \ '                                                               ',
-      \ '        _   ___     _____ __  __          ___   ____   ___     ',
-      \ '       | \ | \ \   / /_ _|  \/  | __   __/ _ \ | ___| / _ \    ',
-      \ '       |  \| |\ \ / / | || |\/| | \ \ / / | | ||___ \| | | |   ',
-      \ '       | |\  | \ V /  | || |  | |  \ V /| |_| | ___) | |_| |   ',
-      \ '       |_| \_|  \_/  |___|_|  |_|   \_/  \___(_)____(_)___/    ',
-      \ '                                                               ',
-      \ '              [ Think NeoVim   Author:The-Repo-Club ]          ',
-      \ ]
+let g:startify_custom_header = [
+    \ '                                                                             ',
+    \ '          _   _ __      __ _____  __  __           ___     _____    ___      ',
+    \ '         | \ | |\ \    / /|_   _||  \/  |         / _ \   | ____|  / _ \     ',
+    \ '         |  \| | \ \  / /   | |  | \  / | __   __| | | |  | |__   | | | |    ',
+    \ '         | . ` |  \ \/ /    | |  | |\/| | \ \ / /| | | |  |___ \  | | | |    ',
+    \ '         | |\  |   \  /    _| |_ | |  | |  \ V / | |_| |_  ___) |_| |_| |    ',
+    \ '         |_| \_|    \/    |_____||_|  |_|   \_/   \___/(_)|____/(_)\___/     ',
+    \ '                                                                             ',
+    \ '                     [ Think NeoVim   Author:The-Repo-Club ]                 ',
+    \ ]
 
-let s:footer = [
+let g:startify_custom_footer = [
     \ '         +-----------------------------------------------+',
     \ '         |                Think NeoVim ^_^               |',
     \ '         |       Talk is cheap Show me the code          |',
@@ -134,16 +126,6 @@ let s:footer = [
     \ '         |            Github:The-Repo-Club               |',
     \ '         +-----------------------------------------------+',
     \ ]
-
-function! s:center(lines) abort
-  let longest_line   = max(map(copy(a:lines), 'strwidth(v:val)'))
-  let centered_lines = map(copy(a:lines),
-        \ 'repeat(" ", (&columns / 2) - (longest_line / 2)) . v:val')
-  return centered_lines
-endfunction
-
-let g:startify_custom_header = s:center(s:header)
-let g:startify_custom_footer = s:center(s:footer)
 
 function! s:lsGitDir()
     let files = systemlist('getfolders -a ~/.gitlabs/')
@@ -192,6 +174,8 @@ let mapleader = " "
 "set keybinds
 nnoremap <leader>sw <cmd>vertical resize 175<cr>
 nnoremap <leader>ss <cmd>Startify<cr>
+
+nnoremap <leader>ff <cmd>FZF<cr>
 
 fun! TrimWhitespace()
     let l:save = winsaveview()
