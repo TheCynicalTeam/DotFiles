@@ -55,7 +55,8 @@ deleted = '✘'
 style = "bold purple"
 
 [directory]
-truncation_length = 5
+truncation_length = 8
+truncation_symbol = '…/'
 format = '[$path]($style)[$lock_symbol]($lock_style)[\]](bold red)'
 style = 'bold red'
 read_only = '🔒'
@@ -63,4 +64,4 @@ read_only_style= 'bold white'
 
 [cmd_duration]
 min_time = 10_000  # Show command duration over 10,000 milliseconds (= 10 sec)
-format = "took [$duration]($style)"
+format = " took [$duration]($style)"
