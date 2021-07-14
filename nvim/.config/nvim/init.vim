@@ -66,7 +66,7 @@ Plug 'lyuts/vim-rtags'
 Plug 'mbbill/undotree'
 Plug 'hoob3rt/lualine.nvim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'wakatime/vim-wakatime'
+"Plug 'wakatime/vim-wakatime'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'valloric/youcompleteme'
 Plug 'mhinz/vim-startify'
@@ -172,7 +172,6 @@ let g:lightline = {
 let mapleader = " "
 
 "set keybinds
-nnoremap <leader>sw <cmd>vertical resize 175<cr>
 nnoremap <leader>ss <cmd>Startify<cr>
 
 nnoremap <leader>ff <cmd>FZF<cr>

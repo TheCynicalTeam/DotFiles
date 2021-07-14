@@ -8,20 +8,55 @@ if [[ $1 == "--type" ]]; then
 	shift
 fi
 
-prefix=${PASSWORD_STORE_DIR-~/.password-store}
-password_files=( "$prefix"/**/*.gpg )
-password_files=( "${password_files[@]#"$prefix"/}" )
-password_files=( "${password_files[@]%.gpg}" )
 
-password=$(printf ':g  %s\n' "${password_files[@]}" | dmenu "$@")
+STARTDIR=${PASSWORD_STORE_DIR-~/.password-store}
+BASEDIR=$STARTDIR
+DONE=0
+LEVEL=0
+PREVSELECTION=""
+SELECTION=""
 
-[[ -n $password ]] || exit
+while [ "$DONE" -eq 0 ] ; do
+  password_files=( "$STARTDIR"/* )
+  password_files=( "${password_files[@]#"$STARTDIR"/}" )
+  password_files=( "${password_files[@]%.gpg}" )
 
-password=$(echo $password | sed "s/:g  //")
+  if [ "$LEVEL" -ne 0 ] ; then
+    password_files=(".." "${password_files[@]}")
+  fi
+  entry=$(printf ':g  %s\n' "${password_files[@]}" | dmenu "$@" -l 15)
+  entry=$(echo $entry | sed "s/:g  //")
 
-if [[ $typeit -eq 0 ]]; then
-	pass show -c "$password" 2>/dev/null
-else
-	pass show "$password" 2>/dev/null
-fi
+  if [ -z "$entry" ] ; then
+    DONE=1
+    exit
+  fi
+
+  if [ "$entry" != ".." ] ; then
+    PREVSELECTION=$SELECTION
+    SELECTION="$SELECTION/$entry"
+
+    # check if another dir
+    if [ -d "$STARTDIR/$entry" ] ; then
+      STARTDIR="$STARTDIR/$entry"
+      LEVEL=$((LEVEL+1))
+    else
+      # not a directory so it must be a real password entry
+
+      if [[ $typeit -eq 0 ]]; then
+        pass show -c "$SELECTION" 2>/dev/null
+      else
+        xdotool - <<<"type --clearmodifiers -- $(pass show "$SELECTION" | head -n 1)"
+      fi
+      DONE=1
+    fi
+
+  else
+    LEVEL=$((LEVEL-1))
+    SELECTION=$PREVSELECTION
+    STARTDIR="$BASEDIR/$SELECTION"
+  fi
+done
+
+
 
